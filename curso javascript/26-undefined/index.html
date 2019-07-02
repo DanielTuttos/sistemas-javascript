@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>JAVASCRIPT</title>
+    </head>
+    <body>
+        <script>
+            //JSON
+            var usuario = {
+                nombre: 'Peter',
+                edad: 100,
+                pais: 'Chile',
+                mascotas: ['blanco', 'negro'],
+                perfil: {
+                    tipo: 'privado',
+                    cuenta: 'premium'
+                },
+                ciudad: 'Iquique'
+            };
+            
+            console.log(usuario.ciudad);
+            
+            if (!usuario.ciudad) {
+                console.log('hola');
+            }
+            
+            if ('ciudad' in usuario) {
+                console.log('el usuario tiene ciudad');
+            }
+            else {
+                console.log('el usuario no tiene ciudad');
+            }
+            
+        </script>
+    </body>
+</html>
+        

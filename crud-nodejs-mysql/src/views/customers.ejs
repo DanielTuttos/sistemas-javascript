@@ -1,0 +1,71 @@
+<%include partials/_header%>
+
+<div class="container mt-4">
+    <h1>Bienvenidos a la página</h1>
+</div>
+
+<div class="container">
+    
+    <div class="row mt-4">
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>NOMBRE</th>
+                        <th>DIRECCION</th>
+                        <th>TELEFONO</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(data){ %>
+                        <% for(let i=0;i<data.length; i++){ %>
+                            <tr>
+                                <td><%= (i+1) %></td>
+                                <td><%= data[i].nombre %></td>
+                                <td><%= data[i].direccion %></td>
+                                <td><%= data[i].telefono %></td>
+                                <td>
+                                    <a href="/delete/<%= data[i].id%>" class="btn btn-danger">ELIMINAR</a>
+                                    <a href="/update/<%= data[i].id%>" class="btn btn-success">UPDATE</a>
+                                </td>
+                            </tr>
+                        <%}%>
+                    <%}%>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group">
+                            <input type="text" name="nombre" id="" placeholder="Name" class="form-control">
+                                           
+                        </div>
+                
+                        <div class="form-group">
+                            <input type="text" name="direccion" id="" placeholder="Address" class="form-control">
+                                               
+                        </div>
+                
+                        <div class="form-group">
+                            <input type="text" name="telefono" id="" placeholder="Phone" class="form-control">
+                                                   
+                        </div>
+                
+                        <div>
+                            <button type="submit" class="btn btn-primary">Save Customer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+<%include partials/_footer%>
